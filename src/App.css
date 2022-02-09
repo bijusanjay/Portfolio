@@ -1,0 +1,163 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  /* width: 100vw; */
+  display: grid;
+  /* background-color: #fff!important; */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Nabar CSS*/
+
+.navbar {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: black;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.navBackground{
+  --bs-bg-opacity: 0 !important;
+  background-color: white!important;
+}
+.n1 {
+  width:max-content;
+}
+
+.header {
+  margin-top: 0;
+  height: fit-content;
+}
+
+.googleIcon {
+  padding-top: 0.5125rem !important;
+  padding-bottom: 0.3125rem;
+  margin-right: 0rem !important;
+  font-size: 1.00rem !important;
+  color: black !important;
+  text-decoration: none;
+  white-space: nowrap;
+  justify-content: center!important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+/* Home CSS */
+div {
+  display: block;
+}
+.row {
+  margin: 40px 0 0;
+}
+.column {
+    float: left;
+    width: 50%;
+    /* height: 600px; */
+    padding: 40px;
+}
+.c1 {
+  padding-top: 120px !important;
+}
+
+h4 {
+   font-size: 3.15rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    line-height: 3.25rem !important;
+    color: rgba(0,0,0,.822) !important;
+}
+
+/* Create page */
+
+.cont1 {
+  height: 100vh;
+  display: flex;
+}
+
+.create {
+  width: 70%;
+  height:fit-content;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 14%;
+}
+.col1 {
+  height: 650px !important;
+}
+
+.form {
+  text-align: initial;
+}
+.box {
+  width: 85% !important;
+}
+.add-btn {
+  margin-left: 15px;
+}
+.project {
+  outline-style:dashed;
+  color: gray;
+  height: 225px;
+  margin-top: 10px;
+}
+.award {
+  outline-style:dashed;
+  color: gray;
+  height: 155px;
+  margin-top: 10px;
+}
+
+.submit {
+  float: right;
+  width: -webkit-fill-available;
+}
+.btns {
+  float: right;
+  margin-top: -40px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
