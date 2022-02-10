@@ -50,7 +50,7 @@ const Portfolio = () => {
                     </Container>
                 </Navbar>
 
-                <Container className="box">
+                <Container className="bx">
                     <Row className="row rp">
                         <Col className="column">
                             <Row className="name">
