@@ -91,7 +91,7 @@ const Portfolio = () => {
                                     <div className='center'>
                                         <a href={data.github} target="_blank"><FaGithub size={25} color="#64ffda" /></a>
                                         <a href={data.linkedin} target="_blank"><AiFillLinkedin size={25} color="#64ffda" /></a>
-                                        <a href={data.email} target="_blank"><SiGmail size={25} color="#64ffda"/></a>
+                                        <a ><SiGmail size={25} color="#64ffda"/></a>
                                     </div>
                                 </Col>
                             </Row>
