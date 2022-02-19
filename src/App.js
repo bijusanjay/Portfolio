@@ -1,9 +1,9 @@
 import './App.css'
 import './Portfolio.css'
 import Navbar from './Components/Navbar'
-import Home from './Components/Home'
-import Create from './Components/Create'
-import Portfolio from './Components/Portfolio';
+import Home from './Pages/Home'
+import Create from './Pages/Create'
+import Portfolio from './Pages/Portfolio';
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 
 function App() {

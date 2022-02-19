@@ -5,7 +5,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChang
 import { useState } from 'react';
 import firebase from '../Firebase'
 import { NavLink, useHistory} from 'react-router-dom'
-import Home from './Home';
+import Home from '../Pages/Home'
 
 const NavbarContainer = () => {
     let history = useHistory();
