@@ -152,7 +152,6 @@ const Portfolio = () => {
                                                     <Card className="skill-box borders" style={{ width: '18rem' }}>
                                                         <Card.Body>
                                                             <Card.Title className="proj-title"><AiFillProject color="#64ffda"/> {obj.project_title}</Card.Title>
-                                                            {/* <Card.Subtitle className="mb-2 language">{obj.company}</Card.Subtitle> */}
                                                             <Card.Text>
                                                                 <div className="proj-desc">
                                                                     <p>{obj.project_desc}</p>
@@ -201,7 +200,7 @@ const Portfolio = () => {
                             <Row className="touch">
                                 <Col>
                                     <div className="abt">
-                                        <p>Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
+                                        <p>My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
                                     </div>
                                     <br/>
                                     <Button href={data.email} className="hello-btn">Say Hello</Button>
