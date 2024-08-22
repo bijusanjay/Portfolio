@@ -1,40 +1,35 @@
 import './App.css'
 import './Portfolio.css'
-import Navbar from './Components/Navbar'
+import Navbar from './components/Navbar'
 import Home from './Pages/Home'
 import Create from './Pages/Create'
-import Portfolio from './Pages/Portfolio';
-import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
+import Portfolio from './Pages/Portfolio'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
     <Router>
-      
-        <div className="App">
-          
-          <Switch>
-            <Route exact path= "/">
+      <div className='App'>
+        <Switch>
+          <Route exact path='/'>
             <Navbar />
-              <Home />
-            </Route>
+            <Home />
+          </Route>
 
-            <Route path= "/create">
+          <Route path='/create'>
             <Navbar />
-              <Create />
-            </Route>
-          
-          <Route path= "/portfolio/:id">
-              <Portfolio />
+            <Create />
+          </Route>
+
+          <Route path='/portfolio/:id'>
+            <Portfolio />
           </Route>
 
           <Route path='*' exact={true} />
-          </Switch>
-          
-        </div>
-      
+        </Switch>
+      </div>
     </Router>
-    
-  );
+  )
 }
 
-export default App;
+export default App
