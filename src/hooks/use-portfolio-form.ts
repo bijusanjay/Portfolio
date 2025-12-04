@@ -165,7 +165,7 @@ export const usePortfolioForm = () => {
 
     const storageRef = ref(storage, filename)
     await uploadBytesResumable(storageRef, file)
-    const url = await getDownloadURL(ref(storage, storageRef))
+    const url = await getDownloadURL(storageRef)
     dispatch({ type: 'SET_FILE_URL', url: url })
     dispatch({ type: 'SET_PREVIEW_URL', url: url })
   }
