@@ -1,0 +1,386 @@
+.portfolio {
+  display: grid;
+  padding-top: 10px;
+  background-color: #0a192f !important;
+  /* min-height: 100%; */
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", "-apple-system", system-ui, sans-serif;
+}
+
+/* Removed navbar styles - no header on portfolio page */
+
+.portfolio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}degree-info
+
+.portfolio-content {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* Hero Section - Left Right Layout */
+.hero-section {
+  margin-bottom: 80px;
+  padding: 60px 0;
+}
+
+.profile-image {
+  width: 280px !important;
+  height: 280px !important;
+  object-fit: cover;
+  border: 4px solid #64ffda;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+  aspect-ratio: 1 / 1;
+}
+
+.user-greeting {
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: 700;
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.user-name {
+  color: rgb(144, 160, 217);
+  white-space: nowrap;
+}
+
+.headline-text {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 700;
+  color: #ccd6f6;
+  margin-bottom: 25px;
+}
+
+.degree-info {
+  color: #ccd6f6;
+  font-size: 16px;
+  margin: 30px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.college-name {
+  font-weight: 700;
+  color: rgb(144, 160, 217);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.social-links a {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 100px;
+}
+
+.section-title {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #ccd6f6;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #64ffda;
+}
+
+.section-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-text {
+  color: #8890b2;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Skills */
+.skills-row {
+  justify-content: center;
+}
+
+.skill-card {
+  background: transparent !important;
+  border: none !important;
+  color: #ccd6f6 !important;
+  height: 100%;
+}
+
+.skill-card-title {
+  color: #ccd6f6 !important;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.skill-card-subtitle {
+  color: #64ffda !important;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 50px));
+  gap: 20px;
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-item {
+  position: relative;
+  padding-left: 0px;
+  font-size: 14px;
+  color: #8890b2;
+  margin-bottom: 8px;
+}
+
+.skill-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #64ffda;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+/* Projects */
+.projects-row {
+  justify-content: center;  
+}
+
+.project-card {
+  background-color: #112240 !important;
+  border: none !important;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+  color: #ccd6f6 !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-description {
+  color: #8890b2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  align-items: center;
+}
+
+/* Experience */
+.experience-row {
+  justify-content: center;
+}
+
+.experience-card {
+  background-color: #112240 !important;
+  border: none !important;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem;
+   align-items: center;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-title {
+  color: #ccd6f6 !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.experience-company {
+  color: #64ffda !important;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.experience-description {
+  color: #8890b2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  color: #8890b2;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hello-button {
+  border: 1px solid #64ffda !important;
+  color: #64ffda !important;
+  background: transparent !important;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hello-button:hover {
+  background-color: rgba(100, 255, 218, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #233554;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-text {
+  color: #8890b2;
+  font-size: 14px;
+}
+
+/* Scrollbar styles only for portfolio page */
+.portfolio ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.portfolio ::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+.portfolio ::-webkit-scrollbar-thumb {
+  background: #8890b2;
+  border-radius: 10px;
+}
+
+.portfolio ::-webkit-scrollbar-thumb:hover {
+  background: #64ffda;
+}
+
+/* Firefox scrollbar for portfolio page */
+.portfolio {
+  scrollbar-width: thin;
+  scrollbar-color: #8890b2 #0a192f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+
+  .hero-section .row {
+    flex-direction: column;
+  }
+
+  .hero-section .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  .profile-image {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .user-greeting {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .user-name {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .headline-text {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .about-section-inline {
+    margin-top: 20px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+}
+
