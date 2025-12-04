@@ -25,10 +25,17 @@ export const routes = [
 
 export const renderRoutes = () => {
   return routes.map((route) => (
-    <Route key={route.path} exact={route.exact} path={route.path}>
-      {route.withNavbar && <Navbar />}
-      <route.component />
-    </Route>
+    <Route 
+      key={route.path} 
+      exact={route.exact} 
+      path={route.path}
+      render={() => (
+        <>
+          {route.withNavbar && <Navbar />}
+          <route.component />
+        </>
+      )}
+    />
   ))
 }
 
