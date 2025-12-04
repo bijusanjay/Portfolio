@@ -20,6 +20,10 @@ const Navbar = () => {
   }, [auth])
 
   const signUp = () => {
+    debugger
+    if (user) {
+      return
+    }
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result)
@@ -70,7 +74,11 @@ const Navbar = () => {
 
           <BootstrapNavbar.Toggle />
           <BootstrapNavbar className="me-auto-end">
-            <BootstrapNavbar.Brand className="googleIcon" onClick={signUp}>
+            <BootstrapNavbar.Brand 
+              className={user ? "googleIcon logged-in" : "googleIcon"} 
+              onClick={user ? undefined : signUp}
+              style={{ cursor: user ? 'default' : 'pointer' }}
+            >
               <img
                 alt="icon"
                 src={icon}
@@ -78,7 +86,9 @@ const Navbar = () => {
                 height="23"
                 className="d-inline-block align-top"
               />
+              <span style={{ marginLeft: '10px' }}>
               {user?.displayName}
+              </span>
             </BootstrapNavbar.Brand>
             {user ? (
               <Nav.Item>
