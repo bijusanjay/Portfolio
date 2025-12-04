@@ -1,0 +1,366 @@
+.portfolio {
+  display: grid;
+  padding-top: 10px;
+  background-color: #0a192f !important;
+  min-height: 100vh;
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", "-apple-system", system-ui, sans-serif;
+}
+
+.portfolio-navbar {
+  background-color: #0a192f;
+  border-bottom: 1px solid #233554;
+  padding: 15px 0;
+}
+
+.portfolio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.portfolio-content {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 40px 0;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.user-greeting {
+  font-size: clamp(40px, 8vw, 70px);
+  font-weight: 700;
+  color: #ccd6f6;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.user-name {
+  color: rgb(144, 160, 217);
+  display: block;
+}
+
+.headline-text {
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 700;
+  color: #ccd6f6;
+  margin-bottom: 40px;
+}
+
+.profile-image-wrapper {
+  margin: 40px auto;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 250px !important;
+  height: 250px !important;
+  object-fit: cover;
+  border: 4px solid #64ffda;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+  aspect-ratio: 1 / 1;
+}
+
+.degree-info {
+  color: #ccd6f6;
+  font-size: 18px;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.college-name {
+  font-weight: 700;
+  color: rgb(144, 160, 217);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.social-links a {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 100px;
+}
+
+.section-title {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #ccd6f6;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #64ffda;
+}
+
+.section-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-text {
+  color: #8890b2;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Skills */
+.skills-row {
+  justify-content: center;
+}
+
+.skill-card {
+  background: transparent !important;
+  border: none !important;
+  color: #ccd6f6 !important;
+  height: 100%;
+}
+
+.skill-card-title {
+  color: #ccd6f6 !important;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.skill-card-subtitle {
+  color: #64ffda !important;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 10px 15px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-item {
+  position: relative;
+  padding-left: 25px;
+  font-size: 14px;
+  color: #8890b2;
+  margin-bottom: 8px;
+}
+
+.skill-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #64ffda;
+  font-size: 16px;
+  line-height: 14px;
+}
+
+/* Projects */
+.projects-row {
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #112240 !important;
+  border: none !important;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+  color: #ccd6f6 !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.project-description {
+  color: #8890b2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Experience */
+.experience-row {
+  justify-content: center;
+}
+
+.experience-card {
+  background-color: #112240 !important;
+  border: none !important;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-title {
+  color: #ccd6f6 !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.experience-company {
+  color: #64ffda !important;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.experience-description {
+  color: #8890b2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  color: #8890b2;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hello-button {
+  border: 1px solid #64ffda !important;
+  color: #64ffda !important;
+  background: transparent !important;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hello-button:hover {
+  background-color: rgba(100, 255, 218, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #233554;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-text {
+  color: #8890b2;
+  font-size: 14px;
+}
+
+/* Scrollbar styles only for portfolio page */
+.portfolio ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.portfolio ::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+.portfolio ::-webkit-scrollbar-thumb {
+  background: #8890b2;
+  border-radius: 10px;
+}
+
+.portfolio ::-webkit-scrollbar-thumb:hover {
+  background: #64ffda;
+}
+
+/* Firefox scrollbar for portfolio page */
+.portfolio {
+  scrollbar-width: thin;
+  scrollbar-color: #8890b2 #0a192f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .user-greeting {
+    font-size: 36px;
+  }
+
+  .headline-text {
+    font-size: 24px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+}
+
