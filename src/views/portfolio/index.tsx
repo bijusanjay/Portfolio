@@ -1,9 +1,9 @@
-import { Container, Row, Col, Card, Navbar, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 import { doc, onSnapshot } from 'firebase/firestore'
 import { db } from '../../api/firebase'
 import { useEffect, useState } from 'react'
-import { FaGithub, FaGraduationCap, FaRegUser } from 'react-icons/fa'
+import { FaGithub, FaGraduationCap } from 'react-icons/fa'
 import { AiFillLinkedin, AiFillProject, AiOutlineCopyrightCircle } from 'react-icons/ai'
 import { MdWork } from 'react-icons/md'
 import { SiGmail } from 'react-icons/si'
@@ -73,14 +73,6 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <Navbar className="portfolio-navbar">
-        <Container>
-          <Navbar.Brand href="#">
-            <FaRegUser size={40} color="#64ffda" />
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
-
       <Container className="portfolio-container">
         <motion.div
           initial="hidden"
@@ -88,80 +80,83 @@ const Portfolio = () => {
           variants={staggerChildren}
           className="portfolio-content"
         >
-          {/* Hero Section */}
+          {/* Hero Section - Left Right Layout */}
           <motion.div variants={fadeInUp} className="hero-section">
-            <div className="hero-content">
-              <div className="user-greeting">
-                Hi, I am <span className="user-name">{data.name}</span>.
-              </div>
-              <div className="headline-text">A {data.headline}.</div>
-              
-              {data.fileUrl && (
-                <motion.div
-                  className="profile-image-wrapper"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-                >
-                  <Image 
-                    src={data.fileUrl} 
-                    className="profile-image"
-                    roundedCircle
-                  />
-                </motion.div>
-              )}
+            <Row className="align-items-start">
+              {/* Left Column: Profile Pic, Degree, Social Links */}
+              <Col md={4} className="text-center mb-4 mb-md-0">
+                {data.fileUrl && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+                  >
+                    <Image 
+                      src={data.fileUrl} 
+                      className="profile-image"
+                      roundedCircle
+                    />
+                  </motion.div>
+                )}                
 
-              {data.degree && (
-                <div className="degree-info">
-                  <FaGraduationCap color="#64ffda" size={20} />
-                  <span>{data.degree}, <span className="college-name">{data.college}</span></span>
+                <div className="social-links">
+                  {data.github && (
+                    <motion.a
+                      href={data.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaGithub size={28} color="#64ffda" />
+                    </motion.a>
+                  )}
+                  {data.linkedin && (
+                    <motion.a
+                      href={data.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <AiFillLinkedin size={28} color="#64ffda" />
+                    </motion.a>
+                  )}
+                  {data.email && (
+                    <motion.a
+                      href={`mailto:${data.email}`}
+                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <SiGmail size={28} color="#64ffda" />
+                    </motion.a>
+                  )}
                 </div>
-              )}
+              </Col>
 
-              <div className="social-links">
-                {data.github && (
-                  <motion.a
-                    href={data.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaGithub size={28} color="#64ffda" />
-                  </motion.a>
-                )}
-                {data.linkedin && (
-                  <motion.a
-                    href={data.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <AiFillLinkedin size={28} color="#64ffda" />
-                  </motion.a>
-                )}
-                {data.email && (
-                  <motion.a
-                    href={`mailto:${data.email}`}
-                    whileHover={{ scale: 1.2, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <SiGmail size={28} color="#64ffda" />
-                  </motion.a>
-                )}
-              </div>
-            </div>
-          </motion.div>
+              {/* Right Column: Name, Headline, About */}
+              <Col md={8}>
+                <div className="user-greeting">
+                  Hi, I am <span className="user-name">{data.name}</span>
+                </div>
+                <div className="headline-text">A {data.headline}.</div>
 
-          {/* About Section */}
-          {data.about && (
-            <motion.section variants={fadeInUp} className="section">
-              <div className="section-content">
-                <p className="about-text">{data.about}</p>
-              </div>
-            </motion.section>
-          )}
+                {/* About Section - Integrated */}
+                {data.about && (
+                  <div className="about-section-inline">
+                    <p className="about-text">{data.about}</p>
+                  </div>
+                )}
+
+                {data.degree && (
+                  <div className="degree-info">
+                    <FaGraduationCap color="#64ffda" size={20} style={{ marginRight: '10px' }}/>
+                    <span>{data.degree}, <span className="college-name">{data.college}</span></span>
+                  </div>
+                )}
+              </Col>
+            </Row>
+          </motion.div>          
 
           {/* Skills Section */}
           {(skilllist.length > 0 || techlist.length > 0) && (
@@ -220,38 +215,6 @@ const Portfolio = () => {
             </motion.section>
           )}
 
-          {/* Projects Section */}
-          {data.inputList && data.inputList.length > 0 && data.inputList[0].project_title && (
-            <motion.section variants={fadeInUp} className="section">
-              <h2 className="section-title">Projects</h2>
-              <Row className="projects-row">
-                {data.inputList.map((project, index) => (
-                  <Col key={index} md={6} lg={4} className="mb-4">
-                    <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ y: -10 }}
-                    >
-                      <Card className="project-card">
-                        <Card.Body>
-                          <Card.Title className="project-title">
-                            <AiFillProject color="#64ffda" size={20} style={{ marginRight: '8px' }} />
-                            {project.project_title}
-                          </Card.Title>
-                          <Card.Text className="project-description">
-                            {project.project_desc}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </motion.div>
-                  </Col>
-                ))}
-              </Row>
-            </motion.section>
-          )}
-
           {/* Experience Section */}
           {data.experience && data.experience.length > 0 && data.experience[0].company && (
             <motion.section variants={fadeInUp} className="section">
@@ -285,6 +248,38 @@ const Portfolio = () => {
             </motion.section>
           )}
 
+          {/* Projects Section */}
+          {data.inputList && data.inputList.length > 0 && data.inputList[0].project_title && (
+            <motion.section variants={fadeInUp} className="section">
+              <h2 className="section-title">Projects</h2>
+              <Row className="projects-row">
+                {data.inputList.map((project, index) => (
+                  <Col key={index} md={6} lg={4} className="mb-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ y: -10 }}
+                    >
+                      <Card className="project-card">
+                        <Card.Body>
+                          <Card.Title className="project-title">
+                            <AiFillProject color="#64ffda" size={20} style={{ marginRight: '8px' }} />
+                            {project.project_title}
+                          </Card.Title>
+                          <Card.Text className="project-description">
+                            {project.project_desc}
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </motion.div>
+                  </Col>
+                ))}
+              </Row>
+            </motion.section>
+          )}          
+
           {/* Contact Section */}
           <motion.section variants={fadeInUp} className="section contact-section">
             <h2 className="section-title">Get In Touch</h2>
@@ -315,4 +310,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio
-
